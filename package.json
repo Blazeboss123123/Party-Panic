@@ -1,0 +1,32 @@
+{
+  "name": "party-panic",
+  "version": "1.0.0",
+  "description": "Party Panic \u2014 a 3D online multiplayer party game for up to eight friends with fifteen minigames.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node scripts/dev.mjs",
+    "build": "node build.mjs",
+    "test": "node --test tests/unit/physics.test.mjs tests/unit/scoring.test.mjs tests/integration/network.test.mjs",
+    "test:unit": "node --test tests/unit/physics.test.mjs tests/unit/scoring.test.mjs",
+    "test:net": "node --test tests/integration/network.test.mjs",
+    "test:games": "node tests/games/runAllGames.mjs",
+    "test:tournament": "node tests/integration/tournament.test.mjs",
+    "test:browser": "node tests/e2e/browser.mjs",
+    "test:perf": "node tests/perf/load.mjs"
+  },
+  "dependencies": {
+    "ws": "^8.21.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "three": "0.186.0"
+  }
+}

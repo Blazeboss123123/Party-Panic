@@ -1,0 +1,14 @@
+# Render blueprint: one free web service running the game server (HTTP + WebSockets).
+# In Render: New > Blueprint > pick this repository. Or create a Web Service by hand with
+# the same build and start commands.
+services:
+  - type: web
+    name: party-panic
+    runtime: node
+    plan: free
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
